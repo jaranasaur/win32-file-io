@@ -1,5 +1,6 @@
 #include <windows.h>
 
+
 /* returns the number of files (excludes directories) in the specified path */
 static unsigned int win32GetNumFiles(
   char *filePath // the path to the files to search, can contain wildcards * 
@@ -20,6 +21,7 @@ static unsigned int win32GetNumFiles(
 
   return numFiles;
 }
+
 
 /* reads the entire file contents into the specified buffer
 you must make sure there is enough space for the file in the buffer */
@@ -47,6 +49,8 @@ static unsigned int win32LoadFile(
 }
 
 
+/* writes the contects of the buffer into either a new file or overwriting an existing file
+*/
 static void win32SaveFile(
   char *filePath,             // the full path to the file to save/create
   void *buffer,               // the data to write to the file
